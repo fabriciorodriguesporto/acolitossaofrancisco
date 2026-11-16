@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173b32">
+  <title>Painel administrativo · Escala de Acólitos</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="app.js"></script>
+</head>
+<body data-page="admin">
+  <header class="site-header">
+    <a class="brand" href="index.html">São Francisco <span>Acólitos</span></a>
+    <nav aria-label="Navegação principal">
+      <a class="nav-link" href="index.html">Ver calendário</a>
+      <button id="logoutButton" class="button button-outline button-small" type="button" hidden>Sair</button>
+    </nav>
+  </header>
+
+  <main class="page-shell admin-shell">
+    <section class="hero admin-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Gestão da comunidade</p>
+        <h1>Painel administrativo</h1>
+        <p>Cadastre acólitos e organize as equipes das próximas celebrações.</p>
+      </div>
+      <div class="hero-mark" aria-hidden="true">✦</div>
+    </section>
+    <div id="adminStatus" class="notice" role="status">Verificando acesso…</div>
+
+    <div id="adminContent" class="admin-content" hidden>
+      <section class="panel-card" aria-labelledby="acolytes-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Equipe de serviço</p>
+            <h2 id="acolytes-heading">Acólitos</h2>
+          </div>
+        </div>
+        <form id="acolyteForm" class="inline-form">
+          <label class="sr-only" for="acolyteName">Nome do acólito</label>
+          <input id="acolyteName" name="nome" type="text" maxlength="100" placeholder="Nome do acólito" required>
+          <button class="button button-primary" type="submit">Adicionar acólito</button>
+        </form>
+        <ul id="acolyteList" class="acolyte-list"></ul>
+      </section>
+
+      <section class="panel-card" aria-labelledby="admin-schedule-heading">
+        <div class="section-heading schedule-admin-heading">
+          <div>
+            <p class="eyebrow">Planejamento</p>
+            <h2 id="admin-schedule-heading">Missas e escalas</h2>
+          </div>
+          <span id="adminPeriod" class="year-badge"></span>
+        </div>
+        <div class="toolbar">
+          <button id="generateButton" class="button button-primary" type="button">Gerar escala</button>
+          <p class="muted small-copy">Gera o rodízio para os próximos 12 meses. Ajustes feitos manualmente são preservados.</p>
+        </div>
+        <div id="adminScheduleList" class="admin-schedule-list"></div>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <span>Escala de Acólitos</span>
+    <span>Área administrativa</span>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173b32">
+  <title>Escala de Acólitos</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="app.js"></script>
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <a class="brand" href="index.html">São Francisco <span>Acólitos</span></a>
+    <nav aria-label="Navegação principal">
+      <a class="nav-link" href="#missas">Próximas missas</a>
+      <a class="button button-outline button-small" href="login.html">Área do administrador</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Servir com fé e alegria</p>
+        <h1>Escala de missas</h1>
+        <p>Acompanhe as próximas celebrações e consulte sua equipe de serviço.</p>
+      </div>
+      <div class="hero-mark" aria-hidden="true">✦</div>
+    </section>
+
+    <section class="featured-section" aria-labelledby="next-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Prepare-se para servir</p>
+          <h2 id="next-heading">Próxima missa</h2>
+        </div>
+      </div>
+      <div id="nextMass" class="featured-card">
+        <p class="loading-text">Carregando a próxima missa…</p>
+      </div>
+    </section>
+
+    <section id="missas" class="schedule-section" aria-labelledby="schedule-heading">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Calendário móvel</p>
+          <h2 id="schedule-heading">Próximas missas</h2>
+        </div>
+        <span id="schedulePeriod" class="year-badge"></span>
+      </div>
+      <div id="publicStatus" class="notice" role="status" hidden></div>
+      <div id="massList" class="mass-list">
+        <p class="loading-text">Carregando as celebrações…</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Escala de Acólitos</span>
+    <span>Servir é participar.</span>
+  </footer>
+</body>
+</html>

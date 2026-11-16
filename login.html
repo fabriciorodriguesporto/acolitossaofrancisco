@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173b32">
+  <title>Entrar · Escala de Acólitos</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="app.js"></script>
+</head>
+<body data-page="login" class="auth-page">
+  <header class="site-header">
+    <a class="brand" href="index.html">São Francisco <span>Acólitos</span></a>
+    <a class="nav-link" href="index.html">Voltar ao calendário</a>
+  </header>
+  <main class="auth-shell">
+    <section class="auth-card">
+      <p class="eyebrow">Acesso restrito</p>
+      <h1>Entrar no painel</h1>
+      <p class="muted">Use o e-mail e a senha da sua conta de administrador.</p>
+      <form id="loginForm" class="form-stack">
+        <label for="loginEmail">E-mail</label>
+        <input id="loginEmail" name="email" type="email" autocomplete="username" required>
+        <label for="loginPassword">Senha</label>
+        <input id="loginPassword" name="password" type="password" autocomplete="current-password" required>
+        <button class="button button-primary button-full" type="submit">Entrar</button>
+      </form>
+      <div id="loginStatus" class="notice" role="status" hidden></div>
+      <p class="auth-footnote">O acesso ao painel é restrito a contas autorizadas em <code>admin_users</code> no Supabase.</p>
+    </section>
+  </main>
+</body>
+</html>
